@@ -53,13 +53,13 @@ namespace HDR_UK_Web_Application.Models
 
         public string Scope { get; set; }
 
-        public static AuthenticationConfig ReadFromJsonFile(string path)
+        public static AuthenticationConfig ReadFromEV()
         {
             IConfigurationRoot Configuration;
 
             var builder = new ConfigurationBuilder()
              .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile(path);
+            .AddEnvironmentVariables();
 
             Configuration = builder.Build();
             return Configuration.Get<AuthenticationConfig>();

@@ -30,7 +30,7 @@ namespace HDR_UK_Web_Application
 
         public void ConfigureServices(IServiceCollection services)
         {
-            AuthenticationConfig config = AuthenticationConfig.ReadFromJsonFile("appsettings.json");
+            AuthenticationConfig config = AuthenticationConfig.ReadFromEV();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddMemoryCache();

@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 using HDR_UK_Web_Application.IServices;
+using System;
 
 namespace HDR_UK_Web_Application.Controllers
 {
@@ -30,6 +31,20 @@ namespace HDR_UK_Web_Application.Controllers
         public async Task<JObject> GetPatient(string id)
         {
             return await _service.GetPatient(id);
+        }
+
+        // GET: api/Patient/<patient ID>/print
+        [HttpGet("{id}/print", Name = "PrintPatient")]
+        public async Task<IActionResult> PrintPatient(string id) {
+            var a = await _service.PrintPatient(id);
+
+            if (a == false) {
+                return StatusCode(500);
+            }
+            var fileName = "/app/FHIRNode/output/" + id + ".pdf";
+            var mimeType = "application/pdf";
+            var stream = System.IO.File.OpenRead(fileName);
+            return File(stream, mimeType);
         }
 
         // GET: api/Patient/pages/<number of pages>

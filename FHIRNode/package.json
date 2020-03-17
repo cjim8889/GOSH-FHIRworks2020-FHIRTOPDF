@@ -1,0 +1,24 @@
+{
+  "name": "fhirnode",
+  "version": "1.0.0",
+  "description": "Nodejs component for generating pdf from FHIR records",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cjim8889/FHIRNode.git"
+  },
+  "author": "Wuhao Chen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cjim8889/FHIRNode/issues"
+  },
+  "homepage": "https://github.com/cjim8889/FHIRNode#readme",
+  "dependencies": {
+    "pdfmake": "^0.1.65"
+  }
+}

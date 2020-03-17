@@ -12,7 +12,7 @@ namespace HDR_UK_Web_Application.Services
     {
         private readonly IProtectedWebApiCallerService _caller;
         private readonly ILoggerManager _logger;
-        private readonly AuthenticationConfig config = AuthenticationConfig.ReadFromJsonFile("appsettings.json");
+        private readonly AuthenticationConfig config = AuthenticationConfig.ReadFromEV();
 
         public ResourceFetchService(IProtectedWebApiCallerService caller, ILoggerManager logger)
         {
